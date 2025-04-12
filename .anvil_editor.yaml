@@ -1,8 +1,9 @@
 unique_ids:
   assets:
+    BlueWay_logo_512x512.png: '1744470780901301112935952.9118'
     theme.css: 6G44GIEQQRJLILWU6GQSQO5BTDFT5ZI3
   forms:
-    Form1: '174445807000957243020075.11362'
+    home: '174445807000957243020075.11362'
   modules: {}
   scripts: {}
   server_modules: {}
