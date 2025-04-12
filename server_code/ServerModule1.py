@@ -4,7 +4,6 @@ from anvil.tables import app_tables
 import anvil.server
 import random
 import string
-import anvil.tables.query as q
 from . import mg
 
 @anvil.server.callable

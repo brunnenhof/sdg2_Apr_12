@@ -30,6 +30,8 @@ class home(homeTemplate):
   def top_btn_start_click(self, **event_args):
     game_id = anvil.server.call('generate_id')
     app_tables.status.add_row(game_id=game_id, closed=0, current_gm=0, current_p=0, roles_avail=2)
+    msg = "Your game ID is "+game_id+". Make a note of it and tell your players."
+    alert(msg, title="Your game ID:")
     anvil.server.call('set_roles', game_id)
     alert("Roles set up")
     pass
