@@ -1,4 +1,51 @@
 allow_embedding: false
+db_schema:
+  roles_taken:
+    client: none
+    columns:
+    - admin_ui: {order: 0, width: 200}
+      name: game_id
+      type: string
+    - admin_ui: {order: 1, width: 200}
+      name: reg
+      type: string
+    - admin_ui: {order: 2, width: 200}
+      name: role
+      type: string
+    - admin_ui: {order: 3, width: 200}
+      name: taken
+      type: number
+    - admin_ui: {order: 4, width: 200}
+      name: role_nbr
+      type: number
+    server: full
+    title: roles_taken
+  status:
+    client: none
+    columns:
+    - admin_ui: {order: 0, width: 200}
+      name: game_id
+      type: string
+    - admin_ui: {order: 1, width: 200}
+      name: closed
+      type: number
+    - admin_ui: {order: 2, width: 200}
+      name: current_p
+      type: number
+    - admin_ui: {order: 3, width: 200}
+      name: next_p
+      type: number
+    - admin_ui: {order: 4, width: 200}
+      name: current_gm
+      type: number
+    - admin_ui: {order: 5, width: 200}
+      name: next_gm
+      type: number
+    - admin_ui: {order: 6, width: 200}
+      name: roles_avail
+      type: number
+    server: full
+    title: status
 dependencies:
 - config: {}
   dep_id: dep_lin1x4oec0ytd

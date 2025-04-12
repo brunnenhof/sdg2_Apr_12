@@ -1,1 +1,5 @@
+color_scheme:
+  colors:
+  - {color: '#014873', name: Primary}
+  preset_groups: []
 roles: []

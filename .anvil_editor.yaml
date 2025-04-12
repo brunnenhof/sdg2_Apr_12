@@ -4,6 +4,8 @@ unique_ids:
     theme.css: 6G44GIEQQRJLILWU6GQSQO5BTDFT5ZI3
   forms:
     home: '174445807000957243020075.11362'
-  modules: {}
+  modules:
+    mg: '1744472200471364924290876.85583'
   scripts: {}
-  server_modules: {}
+  server_modules:
+    ServerModule1: '1744473415726230273471483.26917'
