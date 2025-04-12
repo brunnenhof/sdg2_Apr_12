@@ -37,5 +37,30 @@ class home(homeTemplate):
     pass
 
   def top_btn_join_click(self, **event_args):
-    """This method is called when the component is clicked."""
-    pass
+    print('btn_join')
+    how_many_new = len(app_tables.status.search(closed=0, current_gm =0))
+    if how_many_new > 1:
+      self.top_btn_join.visible = False
+      self.top_btn_start.visible = False
+      self.p_cp_choose_game.visible = True
+      self.p_dd_select_game.items = [(row["game_id"], row) for row in app_tables.status.search(closed=0, current_gm =0, roles_avail=2)]
+    elif how_many_new == 1:
+      row = app_tables.status.get(closed=0)
+      alert(row['game_id'], title="You are joining: ")
+      mg.my_game_id = row['game_id']
+      #### 
+      #### xy must be replaced with the chosen region
+      #### 
+#      self.show_roles(row['game_id'], 'xy')
+#      self.card_select_reg_role.visible = True
+    else:
+      alert("The game organizer has not yet started a game. Please wait until he/she does ...")
+
+  def p_btn_join_after_choice_click(self, **event_args):
+    alert(self.p_dd_select_game.selected_value['game_id'], title="You are joining: ")
+    game_id_chosen = self.p_dd_select_game.selected_value['game_id']
+    mg.my_game_id = game_id_chosen
+#    self.show_roles(game_id_chosen, 'xy')
+#    alert(my_globs.my_game_id,"stored globally")
+    self.p_cp_choose_game.visible = False
+#    self.card_select_reg_role.visible = True
