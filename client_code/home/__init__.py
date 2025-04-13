@@ -29,7 +29,7 @@ class home(homeTemplate):
 
   def top_btn_start_click(self, **event_args):
     game_id = anvil.server.call('generate_id')
-    app_tables.status.add_row(game_id=game_id, closed=0, current_gm=0, current_p=0, roles_avail=2)
+    app_tables.status.add_row(game_id=game_id, closed=0, current_gm=0, current_p=0, roles_avail=4)
     msg = "Your game ID is "+game_id+". Make a note of it and tell your players."
     alert(msg, title="Your game ID:")
     anvil.server.call('set_roles', game_id)
@@ -39,11 +39,12 @@ class home(homeTemplate):
   def top_btn_join_click(self, **event_args):
     print('btn_join')
     how_many_new = len(app_tables.status.search(closed=0, current_gm =0))
+    print(how_many_new)
     if how_many_new > 1:
       self.top_btn_join.visible = False
       self.top_btn_start.visible = False
       self.p_cp_choose_game.visible = True
-      self.p_dd_select_game.items = [(row["game_id"], row) for row in app_tables.status.search(closed=0, current_gm =0, roles_avail=2)]
+      self.p_dd_select_game.items = [(row["game_id"], row) for row in app_tables.status.search(closed=0, current_gm =0, roles_avail=4)]
     elif how_many_new == 1:
       row = app_tables.status.get(closed=0)
       alert(row['game_id'], title="You are joining: ")
